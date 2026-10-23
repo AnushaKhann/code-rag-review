@@ -10,6 +10,8 @@ dependencies = [
     "tree-sitter>=0.25,<0.26",
     "tree-sitter-python>=0.23,<0.26",
     "sentence-transformers>=3.4,<6",
+    "numpy>=1.26,<3",
+    "faiss-cpu>=1.9,<2",
 ]
 
 [project.optional-dependencies]
