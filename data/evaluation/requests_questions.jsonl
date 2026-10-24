@@ -1,0 +1,10 @@
+{"id":"Q01","question":"Where is ConnectTimeout defined?","relevant_symbols":["ConnectTimeout"],"relevant_files":["src/requests/exceptions.py"]}
+{"id":"Q02","question":"Where is ConnectionError defined?","relevant_symbols":["ConnectionError"],"relevant_files":["src/requests/exceptions.py"]}
+{"id":"Q03","question":"Where is HTTPBasicAuth implemented?","relevant_symbols":["HTTPBasicAuth"],"relevant_files":["src/requests/auth.py"]}
+{"id":"Q04","question":"Where are request headers prepared?","relevant_symbols":["PreparedRequest.prepare_headers"],"relevant_files":["src/requests/models.py"]}
+{"id":"Q05","question":"How does a session prepare a request?","relevant_symbols":["Session.prepare_request"],"relevant_files":["src/requests/sessions.py"]}
+{"id":"Q06","question":"Where is the main PreparedRequest preparation logic?","relevant_symbols":["PreparedRequest.prepare"],"relevant_files":["src/requests/models.py"]}
+{"id":"Q07","question":"Where is the Session class implemented?","relevant_symbols":["Session"],"relevant_files":["src/requests/sessions.py"]}
+{"id":"Q08","question":"Where is the HTTPAdapter class implemented?","relevant_symbols":["HTTPAdapter"],"relevant_files":["src/requests/adapters.py"]}
+{"id":"Q09","question":"Where is the AuthBase class defined?","relevant_symbols":["AuthBase"],"relevant_files":["src/requests/auth.py"]}
+{"id":"Q10","question":"Where is the Timeout exception defined?","relevant_symbols":["Timeout"],"relevant_files":["src/requests/exceptions.py"]}

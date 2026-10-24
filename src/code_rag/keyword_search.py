@@ -7,7 +7,7 @@ from rank_bm25 import BM25Okapi
 
 
 def tokenize(text: str) -> list[str]:
-    """Preserve full identifiers and add their component words."""
+    """Preserve identifiers and split compound names without duplicate tokens."""
     identifiers = re.findall(r"[A-Za-z_]\w*|\d+", text)
     tokens: list[str] = []
 
@@ -19,20 +19,21 @@ def tokenize(text: str) -> list[str]:
         split_identifier = re.sub(r"([a-z0-9])([A-Z])", r"\1 \2", identifier)
         split_identifier = re.sub(r"([A-Z])([A-Z][a-z])", r"\1 \2", split_identifier)
 
-        # Also split snake_case and other underscore-separated names.
         parts = re.findall(r"[A-Za-z]+|\d+", split_identifier)
-        tokens.extend(part.lower() for part in parts)
+
+        # Add components only when the identifier is compound.
+        if len(parts) > 1:
+            tokens.extend(part.lower() for part in parts)
 
     return tokens
 
 
 def chunk_to_search_text(chunk: dict[str, Any]) -> str:
-    """Build searchable text from chunk metadata and content."""
+    """Build lexical search text without repeated module imports."""
     parts = [
         chunk.get("file_path", ""),
         chunk.get("symbol_name") or "",
         chunk.get("docstring") or "",
-        " ".join(chunk.get("imports") or []),
         chunk.get("content", ""),
     ]
     return "\n".join(parts)
